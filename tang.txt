@@ -15,20 +15,16 @@ NHÓM 64
 NHÓM 66
 10420: VN-Index chốt phiên giao dịch hôm nay với mức tăng 8,39 điểm, lên 968,54 điểm.
 NHÓM 74
-5048: Kết phiên trên sàn TP HCM, Vn-Index giảm 15,23 điểm, về 402,59 điểm. 01/12
-NHÓM 93
-702: Kết thúc phiên giao dịch, Vn-Index mất tương đương 0,27%.
-5964: Kết thúc phiên giao dịch ngày 16/7, Vn-Index giảm 3 điểm , xuống 413,98 điểm.
-NHÓM 95
-9: Chỉ số VN-Index tăng 6,72 điểm, đạt 390,88 điểm.
-18: Chỉ số chứng khoán VN-Index tăng 6,64%, đạt 518,62 điểm.
-NHÓM 104
-8929: Vn-Index tăng 4,48 điểm, chốt tại 537 điểm.
-8974: Vn-Index tăng 1,34 điểm và chốt tại mốc 590,69 điểm.
-NHÓM 109
-1670: Kết thúc đợt khớp lệnh thứ hai, Vn-Index chốt tại 439,41 điểm, giảm 1,72%.
-NHÓM 114
-1308: Chốt phiên hôm nay, Vn-Index ở mức 529,23 điểm.
-4619: Vn-Index chốt phiên ở 446,69 điểm, giảm 4,57 điểm.
+5048: Kết phiên trên sàn TP HCM, Vn-Index giảm 15,23 điểm, về 402,59 điểm.
 NHÓM 130
 870: Kết thúc phiên giao dịch, chỉ số Vn-Index tăng 0,58%.
+NHÓM 15
+5145: Tại thời điểm này, Vn-Index tăng nhẹ 0,76 điểm, lên 433,07 điểm.
+4294: Trong khi đó, Vn-Index vẫn tăng nhẹ 0,2 điểm lên 507,04 điểm.
+8007: Vn-Index tăng nhẹ 1,88 điểm trong đợt một và lên 489,23 điểm.
+NHÓM 250
+6218: Trong phiên giao dịch cuối cùng của tháng 8, Vn-Index giảm nhẹ 1,23 điểm, lùi về 396,02 điểm, sang tay 33,3 triệu cổ phiếu, ứng với 505 tỷ đồng.
+NHÓM 27
+9361: Đợt một, Vn-Index chỉ giảm nhẹ 0,9 điểm, mua bán thận trọng khi chỉ có 2,5 triệu cổ phiếu khớp lệnh, trị giá hơn 38 tỷ đồng.
+NHÓM 30
+1136: Ở đợt khớp lệnh mở cửa, chỉ số Vn-Index chỉ giảm nhẹ 1,49 điểm, khối lượng giao dịch đợt 1 cũng rất thấp với 1,1 triệu cổ phiếu và chứng chỉ quỹ được trao tay, giá trị cũng chưa tới 90 tỷ đồng.
