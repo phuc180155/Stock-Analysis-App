@@ -26,13 +26,31 @@ public class Export1 extends Sentences implements Export {
 			return buf.toString();
 		}
 	}
+	private void replaceState(List<String> list, int index, float thisState) {
+		if (thisState < 0) {
+			if (thisState < Session.GIAMMANH)
+				list.set(index, "giảm mạnh");
+			else if (thisState > Session.GIAMNHE)
+				list.set(index, "giảm nhẹ");
+			else 
+				list.set(index, "giảm");
+		}
+		else {
+			if (thisState > Session.TANGMANH)
+				list.set(index, "tăng mạnh");
+			else if (thisState < Session.TANGNHE)
+				list.set(index, "tăng nhẹ");
+			else 
+				list.set(index, "tăng");
+		}
+	}
 	@Override
 	public String replace(String st)  {
 		//VD: Chốt phiên giao dịch ngày hôm nay (Day), NameIndex giảm Change điểm (tương đương State%) còn Price điểm
 		//Replace: Chốt phiên giao dịch ngày hôm nay (21/05/2020), VN-INDEX tăng 9.82 điểm (tương đương 1.15%) lên 862.73 điểm
 		Random rd = new Random();
 		try {
-			Session session = Information.getRow(setNameIndex[rd.nextInt(5)], 3+rd.nextInt(20));	// Lấy thông tin phiên 
+			Session session = Information.getRow(setNameIndex[rd.nextInt(5)], 3+rd.nextInt(20));
 			Float price = session.getPrice();		// Lấy giá
 			Float change = session.getChange();		// Lấy giá thay đổi
 			Float state =session.getState();		// Lấy trạng thái (%)
@@ -50,8 +68,9 @@ public class Export1 extends Sentences implements Export {
 				for (int j=0;j<9;j++) {
 					if (str.indexOf(conv[j])>=0) {
 						if (j!=3 && j!=4 && j!=2) list.set(i, process(str, conv[j], repl[j]));			// Nếu không phải là PRICE, CHANGE, STATE => Replace luôn mà không cần thắc mắc
-						else {																			// Nếu là PRICE hoặc CHANGE hoặc STATE
-							if (session.getState()<0) {													
+						else {
+							float thisState = session.getState();
+							if (thisState < 0) {													
 								if (j==2) {																// Nếu đây là PRICE:
 									list.set(i, process(str, conv[j], repl[j]));
 									if (list.get(i-1).equals("lên")) {
@@ -59,16 +78,17 @@ public class Export1 extends Sentences implements Export {
 									}
 									if (list.get(i-1).equals("đạt")) {
 										list.set(i-1, "còn");											// replace: đạt => còn.
-							
 									}
 									
 								}
 								else {																	// Nếu là CHANGE hoặc STATE: => replace
 									list.set(i,process(str, conv[j], repl[j].substring(1)));			
-									if (list.get(i-1).equals("tăng")) 								// Nếu trước CHANGE là tăng => giảm
-										list.set(i-1, "giảm");
-									else if (list.get(i-2).equals("tăng"))
-										list.set(i-2, "giảm");
+									int index = i-2;
+									if (!list.get(index).equals("tăng") && !list.get(index).equals("giảm"))	
+										index = i-1;
+									replaceState(list, index, thisState);
+									if (index == i-2)
+										list.remove(i-1);
 								}
 							}
 							else {																	
@@ -81,11 +101,13 @@ public class Export1 extends Sentences implements Export {
 									}
 								}
 								else {
-									list.set(i,process(str, conv[j], repl[j]));
-									if (list.get(i-1).equals("giảm")) 
-										list.set(i-1, "tăng");
-									else if (list.get(i-2).equals("giảm"))
-										list.set(i-2, "tăng");
+									list.set(i,process(str, conv[j], repl[j].substring(1)));			
+									int index = i-2;
+									if (!list.get(index).equals("tăng") && !list.get(index).equals("giảm"))	
+										index = i-1;
+									replaceState(list, index, thisState);
+									if (index == i-2)
+										list.remove(i-1);
 								}
 							}
 						}
