@@ -26,7 +26,15 @@ public class Export1 extends Sentences implements Export {
 			return buf.toString();
 		}
 	}
-	private void replaceState(List<String> list, int index, float thisState) {
+	private void replaceState(List<String> list, int i, float thisState) {
+		int index = i-2;
+		if (!list.get(index).equals("tăng") && !list.get(index).equals("giảm"))	
+			index = i-1;
+		chooseState(list, index, thisState);
+		if (index == i-2)
+			list.remove(i-1);
+	}
+	private void chooseState(List<String> list, int index, float thisState) {
 		if (thisState < 0) {
 			if (thisState < Session.GIAMMANH)
 				list.set(index, "giảm mạnh");
@@ -83,12 +91,7 @@ public class Export1 extends Sentences implements Export {
 								}
 								else {																	// Nếu là CHANGE hoặc STATE: => replace
 									list.set(i,process(str, conv[j], repl[j].substring(1)));			
-									int index = i-2;
-									if (!list.get(index).equals("tăng") && !list.get(index).equals("giảm"))	
-										index = i-1;
-									replaceState(list, index, thisState);
-									if (index == i-2)
-										list.remove(i-1);
+									replaceState(list, i, thisState);
 								}
 							}
 							else {																	
@@ -101,13 +104,8 @@ public class Export1 extends Sentences implements Export {
 									}
 								}
 								else {
-									list.set(i,process(str, conv[j], repl[j].substring(1)));			
-									int index = i-2;
-									if (!list.get(index).equals("tăng") && !list.get(index).equals("giảm"))	
-										index = i-1;
-									replaceState(list, index, thisState);
-									if (index == i-2)
-										list.remove(i-1);
+									list.set(i,process(str, conv[j], repl[j]));			
+									replaceState(list, i, thisState);
 								}
 							}
 						}
