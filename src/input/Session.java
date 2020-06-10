@@ -15,12 +15,10 @@ public class Session {//Phien giao dich
 	private String matchingTradeValue;//Gia tri giao dich khop lenh
 	private String transactionWeight;//Khoi luong giao dich thoa thuan
 	private String transactionValue;//Gia tri giao dich thoa thuan
-	public static final float TANGMANH = 1.5f;
-	public static final float TANG = 1.0f;
-	public static final float TANGNHE = 0.5f;
-	public static final float GIAMMANH = -1.5f;
-	public static final float GIAM = -1.0f;
-	public static final float GIAMNHE = -0.5f;
+	public static final float TANGMANH = 3.0f;
+	public static final float TANGNHE = 1.0f;
+	public static final float GIAMMANH = -3.0f;
+	public static final float GIAMNHE = -1.0f;
 	
 	public String getNameIndex() {
 		return nameIndex;

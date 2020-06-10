@@ -30,9 +30,11 @@ public class Export1 extends Sentences implements Export {
 		int index = i-2;
 		if (!list.get(index).equals("tăng") && !list.get(index).equals("giảm"))	
 			index = i-1;
-		chooseState(list, index, thisState);
-		if (index == i-2)
-			list.remove(i-1);
+		if (list.get(index).equals("tăng")||list.get(index).equals("giảm")) {
+			chooseState(list, index, thisState);
+			if (index == i-2)
+				list.remove(i-1);
+		}
 	}
 	private void chooseState(List<String> list, int index, float thisState) {
 		if (thisState < 0) {
