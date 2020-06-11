@@ -11,6 +11,7 @@ public class Session {//Phien giao dich
 	private float change;//Bien dong so voi ngay hom truoc
 	private float state;//Trang thai so voi hom truoc do(tang giam,....)
 	private float price;//Gia
+	private float startPrice;// Giá mở cửa
 	private String matchingTradeWeight;//Khoi luong giao dich khop lenh
 	private String matchingTradeValue;//Gia tri giao dich khop lenh
 	private String transactionWeight;//Khoi luong giao dich thoa thuan
@@ -19,12 +20,16 @@ public class Session {//Phien giao dich
 	public static final float TANGNHE = 1.0f;
 	public static final float GIAMMANH = -3.0f;
 	public static final float GIAMNHE = -1.0f;
+	public static final float THRESHOLD = 20.0f;
 	
 	public String getNameIndex() {
 		return nameIndex;
 	}
 	public void setNameIndex(String nameIndex) {
 		this.nameIndex = nameIndex;
+	}
+	public float getStartPrice() {
+		return startPrice;
 	}
 	public String getDay() {
 		return day;
@@ -34,6 +39,9 @@ public class Session {//Phien giao dich
 	}
 	public float getState() {
 		return state;
+	}
+	public float getChange() {
+		return change;
 	}
 	public void setState(float state) {
 		this.state = state;
@@ -68,8 +76,8 @@ public class Session {//Phien giao dich
 	public void setTransactionValue(String transactionValue) {
 		this.transactionValue = transactionValue;
 	}
-	public float getChange() {
-		return change;
+	public void setStartPrice(float startPrice) {
+		this.startPrice = startPrice;
 	}
 	public void setChange(float change) {
 		this.change = change;

@@ -19,6 +19,7 @@ public interface Export extends Convention{
 	 * @return String kq
 	 */
 	public String replace(String st);
+
 	/**
 	 * <h1> Add các câu kết quả vào một list dùng chung </h1>
 	 * <p> Đầu vào: File mẫu câu và đối tượng chứa luật dùng để mô hình câu </p>

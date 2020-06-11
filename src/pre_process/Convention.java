@@ -15,5 +15,7 @@ public interface Convention {
 	public static final String TRANSACTION_WEIGHT = "TransactionWeight";
 	public static final String TRANSACTION_VALUE = "TransactionValue";
 	public static final String CHANGE = "Change";
+	public static final String COLORCANDLE = "ColorCandle";
+	public static final String STARTPRICE = "StartPrice";
 	public static String[] setNameIndex = {"VN-INDEX","VN30-INDEX","HNX-INDEX","HNX30-INDEX","UPCOM-INDEX"};
 }
